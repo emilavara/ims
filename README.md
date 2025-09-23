@@ -1,11 +1,11 @@
-# IMS API
+# IMS Gruppuppgift
 
 Ett enkelt Express-API för att hantera produkter och tillverkare.
 
 ## Kom igång
 1. Kopiera `.env.example` till `.env` och fyll i `MONGODB_URI`.
-2. Installera beroenden med `npm install`.
-3. Starta utvecklingsservern med `npm run dev`.
+2. Installera dependecies med `npm install`.
+3. Starta servern med `npm run dev`.
 
 ## Endpoints
 
@@ -35,7 +35,7 @@ Ett enkelt Express-API för att hantera produkter och tillverkare.
 - `GET /api/manufacturers`
   - Lista alla tillverkare som finns i systemet.
 
-## Exempel på produktpayload
+## Exempel på produktpayload (tack chatgpt)
 ```json
 {
   "name": "Aurora LED Desk Lamp",
