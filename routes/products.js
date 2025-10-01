@@ -1,11 +1,8 @@
 import express from 'express';
-import mongoose from 'mongoose';
 import Product from '../models/product.js';
+import { isValidObjectId } from '../scripts/helpers.js';
 
 const router = express.Router();
-
-//quick helper to bail out requests early on bad ids – is this even necessary?
-const isValidObjectId = (value) => mongoose.Types.ObjectId.isValid(value);
 
 //get every product
 router.get('/', async (req, res, next) => {
