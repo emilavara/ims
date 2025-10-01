@@ -1,6 +1,6 @@
 # IMS Gruppuppgift
 
-Ett enkelt Express-API för att hantera produkter och tillverkare.
+Ett enkelt Express-API och GraphQL api för att hantera produkter och tillverkare.
 
 ## Endpoints
 
