@@ -1,16 +1,15 @@
-// Tiny helpers we reuse across resolvers to keep GraphQL responses predictable.
 export const toIsoString = (value) => {
   if (!value) return new Date(0).toISOString();
   return value instanceof Date ? value.toISOString() : new Date(value).toISOString();
 };
 
-// unwrap mongoose documents/subdocuments into plain json values
+// Parse mongoose documents/subdocuments to plain JSON
 export const toPlain = (value) => {
   if (!value) return value;
   return typeof value.toObject === 'function' ? value.toObject() : value;
 };
 
-// normalise product documents into GraphQL-friendly objects
+// Normalise product documents
 export const mapProduct = (doc) => {
   const obj = toPlain(doc);
   return {

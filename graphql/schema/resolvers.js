@@ -2,9 +2,7 @@ import Product from '../../models/product.js';
 import { mapProduct, toPlain } from '../utils/mappers.js';
 import { isValidObjectId } from '../../scripts/helpers.js';
 
-// keep object id checks in one place so resolvers and routes behave the same
-
-
+// Keep object id checks in one place so resolvers and routes behave the same
 const resolvers = {
   Query: {
     products: async () => {
@@ -33,7 +31,7 @@ const resolvers = {
         }
 
         const key = manufacturer.name;
-        // sum each manufacturer's stock value by name so we can return a tidy array later
+        // Sum each manufacturer stock value by name, returns tidey array
         const current = totals.get(key) || { manufacturer, totalStockValue: 0 };
         current.totalStockValue += product.price * product.amountInStock;
         totals.set(key, current);
@@ -72,7 +70,7 @@ const resolvers = {
           return;
         }
 
-        // dedupe on manufacturer name to avoid duplicate entries when several products share one
+        // Avoid duplicate entries when several products share name
         if (!manufacturers.has(manufacturer.name)) {
           manufacturers.set(manufacturer.name, manufacturer);
         }

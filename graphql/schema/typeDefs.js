@@ -1,4 +1,4 @@
-// Schema mirrors the REST API shape so both surfaces stay in sync
+// Schema mirrors the REST API, so the two APIs can work in sync withou issues
 const typeDefs = `#graphql
 	type Contact {
 		name: String!
