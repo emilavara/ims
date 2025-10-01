@@ -1,6 +1,6 @@
-# IMS Gruppuppgift
+# IMS Gruppuppgift – Grupp 9
 
-Ett enkelt Express-API och GraphQL api för att hantera produkter och tillverkare.
+Ett RESTful API, och ett GraphQLAPI som integrerar med samma MongoDB-databas.
 
 ## Endpoints
 
@@ -29,3 +29,23 @@ Ett enkelt Express-API och GraphQL api för att hantera produkter och tillverkar
 #### Manufacturers
 - `GET /api/manufacturers`
   - Lista alla tillverkare som finns i systemet.
+
+## GraphQL
+
+- Endpoint: `POST /graphql` (Apollo Sandbox nås via webbläsaren på samma adress)
+
+### Queries
+
+- `products` – listar alla produkter.
+- `product(id: ID!)` – hämtar en specifik produkt via dess MongoDB-ID.
+- `totalStockValue` – summerar lagervärdet för alla produkter.
+- `totalStockValueByManufacturer` – summerar lagervärden per tillverkare.
+- `lowStockProducts` – visar produkter med mindre än 10 enheter i lager.
+- `criticalStockProducts` – visar produkter med mindre än 5 enheter och inkluderar kontaktinfo.
+- `manufacturers` – listar unika tillverkare baserat på produkterna i databasen.
+
+### Mutationer
+
+- `addProduct(input: ProductInput!)` – skapar en ny produkt.
+- `updateProduct(id: ID!, input: ProductUpdateInput!)` – uppdaterar en befintlig produkt.
+- `deleteProduct(id: ID!)` – tar bort en produkt.
